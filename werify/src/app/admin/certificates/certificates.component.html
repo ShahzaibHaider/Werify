@@ -1,0 +1,35 @@
+<div class="container-fluid">
+      <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                  <h2 class="m-0 font-weight-bold text-danger">Certificates</h2>
+            </div>
+            <div class="card-body">
+                  <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                              <thead>
+                                    <tr>
+                                          <th>Certificate ID</th>
+                                          <th>Sender</th>
+                                          <th>Receiver</th>
+                                          <th>Date</th>
+                                          <th>Course</th>
+                                          <th>Reciever CNIC</th>
+                                    </tr>
+                              </thead>
+                              <tbody>
+                                    <tr *ngFor="let certificate of certificates">
+                                          <td>{{certificate.certificate_no}}</td>
+                                          <td>{{certificate.sender}}</td>
+                                          <td>{{certificate.reciever}}</td>
+                                          <td>{{certificate.issue_date}}</td>
+                                          <td>{{certificate.course}}</td>
+                                          <td>{{certificate.reciever_cnic}}</td>
+                                    </tr>
+
+                              </tbody>
+                        </table>
+                  </div>
+            </div>
+      </div>
+
+</div>

@@ -1,0 +1,21 @@
+<div class="d-md-flex align-items-center h-md-100 p-5 justify-content-center">
+      <form ngNativeValidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <h2>Feedback</h2>
+            <label>Category</label>
+            <select name="category" required class="form-control" ngModel>
+                  <option selected value="Account Issues">Account Issues</option>
+                  <option value="Suggestions">Suggestion</option>
+                  <option value="Complain">Complain</option>
+                  <option value="Request">Request</option>
+                  <option value="Other">Other</option>
+            </select>
+            <div class="form-group">
+                  <label>Feedback</label>
+                  <textarea type="text" rows="4" name="desc" class="form-control" aria-describedby="emailHelp" ngModel
+                        required placeholder="Enter Feedback"></textarea>
+            </div>
+            <div class="d-md-flex align-items-center h-md-100 justify-content-center">
+                  <button type="submit" class="btn btn-primary">Submit Feedback</button>
+            </div>
+      </form>
+</div>

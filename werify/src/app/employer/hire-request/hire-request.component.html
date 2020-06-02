@@ -1,0 +1,44 @@
+<div *ngIf="hireRequests.length==0; else elseBlock">
+      <h2 class="p-5">No Hiring Offers Received</h2>
+</div>
+<ng-template #elseBlock>
+      <section class="ftco-section bg-light">
+            <div class="container">
+                  <div class="row">
+                        <h2 class="mt-4">Job Offers</h2>
+                        <div *ngFor="let offer of hireRequests" class="col-md-12 ftco-animate pt-3">
+                              <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center ">
+                                    <div class="mb-4 mb-md-0 mr-5">
+                                          <div class="job-post-item-header d-flex align-items-center">
+                                                <h2 class="mr-3 text-black h3">{{offer.job_title}}</h2>
+                                                <div class="badge-wrap">
+                                                </div>
+                                          </div>
+                                          <!-- <div class="job-post-item-body d-block d-md-flex">
+                                                <div class="mr-3">{{offer.from}}</div>
+                                                <div><span class="icon-my_location"></span> <span>{{offer.to}}</span>
+                                                </div>
+                                          </div> -->
+                                          <div class="job-post-item-body d-block d-md-flex">
+                                                <div class="mr-3">{{"Salary "+ offer.salary+"/- PKR"}}</div>
+                                          </div>
+                                    </div>
+                                    <div class="ml-auto d-flex">
+                                          <div *ngIf="offer.status==null; else elseBlock">
+                                                <a class="btn btn-primary btn-sm mr-2 change_color">Pending</a>
+                                          </div>
+                                          <ng-template #elseBlock>
+                                                <div *ngIf="offer.status==false; else elseBlock">
+                                                      <a class="btn btn-danger btn-sm mr-2 change_color">Rejected</a>
+                                                </div>
+                                                <ng-template #elseBlock>
+                                                      <a class="btn btn-success btn-sm mr-2 change_color">Accepted</a>
+                                                </ng-template>
+                                          </ng-template>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </section>
+</ng-template>

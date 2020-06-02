@@ -1,0 +1,121 @@
+<div class="container-fluid">
+      <div class="row">
+            <div class="col-md-1 pt-4 pr-4">
+            </div>
+            <div class="col-md-8 p-5">
+                  <canvas id='canvas' width='800' height='450'> </canvas>
+            </div>
+            <div class="col-md-3 sidebar bg-light border-left">
+                  <div class="row container-fluid pt-3 pl-3">
+                        <div class="btn-group mr-2" role="group" aria-label="First group">
+                              <button (click)="removeSelectedCanvasElement()" type="button"
+                                    class="btn btn-outline-success"><img height="35px" width="35px"
+                                          src="../../../assets/trash.svg" alt=""></button>
+                              <button (click)="add_shape()" type="button" class="btn btn-outline-success"><img
+                                          height="35px" width="35px" src="../../../assets/shapes.png"
+                                          alt="Add Shapes"></button>
+                              <button (click)="add_text()" type="button" class="btn btn-outline-success"><img
+                                          height="35px" width="35px" src="../../../assets/text.png" alt=""></button>
+                              <!-- <input type="file" accept=".jpg,.png,.jpeg" name="uploadfile" id="img"
+                                    (change)="onFileSelected($event)" style="display:none;" multiple="multiple" />
+                              <button type="button" class="btn btn-outline-success pt-3"><label id="upload_button"
+                                          for="img"><img height="35px" width="35px"
+                                                src="../../../assets/defualt_design_image.png" alt=""></label></button> -->
+                              <button (click)="undo()" type="button" class="btn btn-outline-success"><img height="35px"
+                                          width="35px" src="../../../assets/undo.svg" alt=""></button>
+                              <button (click)="changebackground()" type="button" class="btn btn-outline-success"><img
+                                          height="35px" width="35px" src="../../../assets/backgroundColor.png"
+                                          alt=""></button>
+                        </div>
+                  </div>
+                  <h5 class="pt-4">Typeface</h5>
+
+                  <div class="container-fluid p-3">
+                        <div class="row">
+                              <div class="container-fluid mx-auto">
+                                    <h6>Font</h6>
+                                    <select class="form-control btn btn-outline-success" name="font_name"
+                                          [(ngModel)]="font_name">
+                                          <option value="arial">Arial</option>
+                                          <option value="impact">Impact</option>
+                                          <option value="calibiri">Calibiri</option>
+                                          <option value="tahoma">Tahoma</option>
+                                    </select>
+                              </div>
+                              <div class="container-fluid mx-auto">
+                                    <h6>Style</h6>
+                                    <div class="row mx-auto">
+                                          <div class="col-md-4 ">
+                                                <button [class.change_background]="bold_selected"
+                                                      (click)="changestyle('bold')" class="btn btn-outline-success"><img
+                                                            height="35px" width="30px" src="../../../assets/bold.png"
+                                                            alt=""></button>
+                                          </div>
+                                          <div class="col-md-4">
+                                                <button [class.change_background]="italic_selected"
+                                                      (click)="changestyle('italic')"
+                                                      class="btn btn-outline-success"><img height="35px" width="30px"
+                                                            src="../../../assets/italic.png" alt=""></button>
+                                          </div>
+                                          <div class="col-md-4">
+                                                <button [class.change_background]="underline_selected"
+                                                      (click)="changestyle('underline')"
+                                                      class="btn btn-outline-success"><img height="35px" width="30px"
+                                                            src="../../../assets/underline.png" alt=""></button>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+
+                  <div class="row">
+                        <div class="col-md-6">
+                              <div class="container-fluid">
+                                    <h6>Color</h6>
+                                    <input id="color_value" type="color" class="form-control">
+                              </div>
+                        </div>
+                        <div class="col-md-6">
+                              <div class="container-fluid">
+                                    <h6>Size</h6>
+                                    <select class="form-control" [(ngModel)]="font_size" name="font_size" id="">
+                                          <option value="10">10</option>
+                                          <option value="20">20</option>
+                                          <option value="30">30</option>
+                                          <option value="40">40</option>
+                                          <option value="50">50</option>
+                                    </select>
+                              </div>
+                        </div>
+                  </div>
+                  <h5 class="pt-4">Alignment</h5>
+                  <div class="container-fluid">
+                        <div class="row mx-auto">
+                              <div class="col-md-2">
+                                    <button (click)="align('left')" class="btn btn-outline-success"><img height="25px"
+                                                width="20px" src="../../../assets/left.png" alt=""></button>
+                              </div>
+                              <div class="col-md-2">
+                                    <button (click)="align('top')" class="btn btn-outline-success"><img height="25px"
+                                                width="20px" src="../../../assets/top.png" alt=""></button>
+                              </div>
+                              <div class="col-md-2">
+                                    <button (click)="align('center')" class="btn btn-outline-success"><img height="25px"
+                                                width="20px" src="../../../assets/center.png" alt=""></button>
+                              </div>
+                              <div class="col-md-2">
+                                    <button (click)="align('bottom')" class="btn btn-outline-success"><img height="25px"
+                                                width="20px" src="../../../assets/bottom.png" alt=""></button>
+                              </div>
+                              <div class="col-md-2">
+                                    <button (click)="align('right')" class="btn btn-outline-success"><img height="25px"
+                                                width="20px" src="../../../assets/right.png" alt=""></button>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="container-fluid row pt-3 ml-1"><button (click)="save()" type="button"
+                              class="btn btn-success btn-lg btn-block">Save
+                              Design</button></div>
+            </div>
+      </div>
+</div>

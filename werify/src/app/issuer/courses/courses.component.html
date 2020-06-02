@@ -1,0 +1,55 @@
+<div class="card-header">
+      <div class="row container-fluid">
+            <div class="col-sm-4">
+                  <div class="ml-5 pl-4">
+                        <h3>Courses</h3>
+                  </div>
+            </div>
+            <div class="col-sm-6">
+            </div>
+            <div class="col-sm-2">
+                  <div class="ml-5 pl-4">
+                        <a routerLink='add_course'><button type="button" class="btn btn-success">Add
+                                    Course</button></a>
+                  </div>
+            </div>
+      </div>
+</div>
+
+<!-- <div *ngIf="org==null; else elseBlock1">
+      Loading
+</div> -->
+<div *ngIf="org.courses.length==0; else elseBlock">
+      <div class="container-fluid p-5">
+            <h3 class="pl-5 ml-5">No Courses Added</h3>
+      </div>
+</div>
+
+<ng-template #elseBlock>
+      <section Id="team">
+            <div class="container my-3 text-center">
+                  <div class="row">
+                        <div *ngFor="let course of org.courses" class="col-lg-4 col md-6">
+                              <div class="card mb-4">
+                                    <div class="card-body">
+                                          <h3>{{course.name}}</h3>
+                                          <!-- <h5> {{course.duration}}</h5> -->
+                                          <p> {{course.desc}}</p>
+                                          <div class="d-flex flex-row justify-content-center">
+                                                <div class="p4">
+                                                      <a class="btn btn-success btn-sm change_color mr-3"
+                                                            routerLink="edit_course/{{course.name}}">Edit
+                                                      </a>
+                                                      <a class="btn btn-success btn-sm change_color"
+                                                            (click)="deletecourse(course.name)">Delete
+                                                      </a>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+
+                        </div>
+                  </div>
+            </div>
+      </section>
+</ng-template>

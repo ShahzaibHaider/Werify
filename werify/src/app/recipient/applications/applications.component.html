@@ -1,0 +1,33 @@
+<div *ngIf="applications.length==0; else elseBlock">
+      <h2 class="p-5">No Applications Submitted Yet</h2>
+</div>
+<ng-template #elseBlock>
+      <section Id="team">
+            <div class="container my-3 py-5 text-center">
+                  <div class="row">
+                        <div *ngFor="let application of applications" class="col-lg-4 col md-6 pb-5">
+                              <div class="card">
+                                    <div class="card-body">
+                                          <h3>{{application.job_title}}</h3>
+                                          <h4 class="change_color_2">{{application.application_status}}</h4>
+                                          <h6>{{application.proposal}}</h6>
+                                          <div class="d-flex flex-row justify-content-center">
+                                                <div class="p5">
+                                                      <a (click)="GotoJob(application.job)"
+                                                            class="btn btn-primary btn-sm change_color mr-4">View
+                                                            Job
+                                                      </a>
+                                                </div>
+                                                <div class="p5">
+                                                      <a (click)="DeleteApplication(application.job,application.recipient)"
+                                                            class="btn btn-primary btn-sm change_color">Delete
+                                                      </a>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </section>
+</ng-template>

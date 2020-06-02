@@ -1,0 +1,47 @@
+body {
+      font-family: 'Raleway',sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #777;
+      
+  }
+  
+  h1 {
+      font-size: 36px;
+      font-weight: bold ;
+      color: #555;
+  }
+  
+  h3 {
+      font-size: 24px;
+      font-weight: bold ;
+      color: #333;
+  }
+  
+  #team img {
+      margin-top: -50px;
+  }
+  
+  #team p {
+      font-weight: 500;
+  }
+  
+  #team .card {
+      border-radius: 0;
+      box-shadow: 5px 5px 15px #28a745;
+      transition: all 0.3s ease-in;
+      -webkit-transition: all 0.3s ease-in;
+      -moz-transition: all 0.3s ease-in;
+  }
+   
+  #team .card:hover {
+      /* background: #28a745; */
+      /* color: #fff; */
+      border-radius: 5px;
+      border:none;
+      box-shadow: 2px 2px 2px 7px #28a745;
+  }
+  
+  #team .card:hover h3 {
+      color: #fff;
+  }

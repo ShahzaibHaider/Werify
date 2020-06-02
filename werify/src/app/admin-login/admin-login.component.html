@@ -1,0 +1,18 @@
+<div class="d-md-flex align-items-center p-5 justify-content-center">
+      <form ngNativeValidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <h2>Admin Login</h2>
+            <div class="form-group">
+                  <label>Username</label>
+                  <input type="text" name="username" class="form-control" aria-describedby="emailHelp" ngModel required
+                        placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                  <label>Password</label>
+                  <input type="password" name="password" required class="form-control" ngModel placeholder="Password">
+            </div>
+            <div class="d-md-flex align-items-center justify-content-center">
+                  <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+
+      </form>
+</div>

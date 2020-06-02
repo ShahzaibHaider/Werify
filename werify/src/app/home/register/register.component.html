@@ -1,0 +1,28 @@
+<div class="d-md-flex align-items-center h-md-100 p-4 justify-content-center">
+      <form ngNativeValidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <h2>Register</h2>
+            <label>User</label>
+            <select name="user_type" required class="form-control" [(ngModel)]="user_type">
+                  <option value="0">Select user</option>
+                  <option value="1">Recipient</option>
+                  <option value="2">Organization</option>
+            </select>
+            <div class="form-group">
+                  <label>Email address</label>
+                  <input type="email" name="email" class="form-control" aria-describedby="emailHelp" ngModel required
+                        placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                  <label>Username</label>
+                  <input type="text" name="username" class="form-control" aria-describedby="emailHelp" ngModel required
+                        placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                  <label>Password</label>
+                  <input type="password" name="password" required class="form-control" ngModel placeholder="Password">
+            </div>
+            <div class="d-md-flex align-items-center h-md-100 p-2 justify-content-center">
+                  <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+      </form>
+</div>

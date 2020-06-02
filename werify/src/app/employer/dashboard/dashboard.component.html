@@ -1,0 +1,142 @@
+<div *ngIf="!(this.org); else elseBlock">
+      <h3>You are Logged Out</h3>
+</div>
+<ng-template #elseBlock>
+      <div *ngIf="!(this.org==null); else elseBlockupper">
+            <div *ngIf="!org.profile_completed_status; else elseBlocklower">
+                  <h4>Please Complete the profile first( Goto to Edit Profile ) </h4>
+            </div>
+            <ng-template #elseBlocklower>
+                  <div *ngIf="!this.org.approved; else elseBlockMain">
+                        <h2>Profile is under Review</h2>
+                  </div>
+            </ng-template>
+      </div>
+      <ng-template #elseBlockupper>
+            <h4>Loading ...</h4>
+      </ng-template>
+
+      <ng-template #elseBlockMain>
+            <!-- <h4>Profile Completed and Approved Successfully</h4> -->
+            <div class="container-fluid">
+                  <div class="container profile-container">
+                        <div class="row">
+                              <div id="menu-jk" class="col-md-4">
+                                    <div class="pro-s-cover">
+                                          <img [src]="imageSrc || '../../../assets/default_profile_image.png'" alt=""
+                                                class="img-fluid rounded-circle w-50 mb-3">
+                                          <h6>{{org.username}}</h6>
+                                          <span>{{org.email}}</span>
+                                          <p>{{org.address}}</p>
+                                          <div class="num-box w-100 d-flex">
+                                                <div class="hire">
+                                                      <b>10</b> <br>
+                                                      <span>Jobs </span>
+                                                </div>
+                                                <div class="msg">
+                                                      <b>7</b> <br>
+                                                      <span>Employers</span>
+                                                </div>
+                                          </div>
+                                          <!-- <div class="msg-box d-flex">
+                                                <div class="hire">
+                                                      <button type="button" class="btn btn-info">Hire</button>
+                                                </div>
+                                                <div class="msg">
+                                                      <button type="button" class="btn btn-info">Message</button>
+                                                </div>
+                                          </div> -->
+                                    </div>
+                                    <div class="con-cover">
+                                          <h4>Contact</h4>
+                                          <div
+                                                class="cd-ro row d-md-flex align-items-center h-md-100 p-4 justify-content-center">
+                                                <h6>Mobile No: {{org.phone}}</h6>
+                                          </div>
+                                          <!-- <div
+                                                class="cd-ro row d-md-flex align-items-center h-md-100 p-4 justify-content-center">
+                                                <h6>Email : {{org.email}}</h6>
+                                          </div> -->
+                                    </div>
+                              </div>
+                              <div class="col-md-8">
+                                    <div class="data-box">
+                                          <h2>Jobs</h2>
+                                          <section class="ftco-section bg-light">
+                                                <div class="container">
+                                                      <div class="row ">
+                                                            <div *ngFor="let job of jobs"
+                                                                  class="col-md-12 ftco-animate pt-3">
+                                                                  <div
+                                                                        class="job-post-item bg-white p-4 d-block d-md-flex align-items-center ">
+                                                                        <div class="mb-4 mb-md-0 mr-5">
+                                                                              <div
+                                                                                    class="job-post-item-header d-flex align-items-center">
+                                                                                    <h2 class="mr-3 text-black h3">
+                                                                                          {{job.title}}</h2>
+                                                                                    <div class="badge-wrap">
+                                                                                          <span
+                                                                                                class="bg-danger text-white badge py-2 px-3">{{job.job_type}}</span>
+                                                                                    </div>
+
+
+                                                                              </div>
+                                                                              <div
+                                                                                    class="job-post-item-body d-block d-md-flex">
+                                                                                    <div class="mr-3">{{job.user}}</div>
+                                                                                    <div><span
+                                                                                                class="icon-my_location"></span>
+                                                                                          <span>{{job.location}}</span>
+                                                                                    </div>
+                                                                              </div>
+                                                                              <div
+                                                                                    class="job-post-item-body d-block d-md-flex">
+                                                                                    <div class="mr-3">
+                                                                                          {{job.salary+"/- PKR"}}</div>
+                                                                              </div>
+                                                                        </div>
+
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </section>
+                                    </div>
+                                    <!-- <div class="data-box service-box">
+                                          <h2>Certificates</h2>
+                                          <section Id="team">
+                                                <div class="container my-3 py-5 text-center">
+                                                      <div class="row">
+                                                            <div class="col-lg-4 col md-6 mb-3">
+                                                                  <div class="card">
+                                                                        <div class="card-body">
+                                                                              <img src="../../../assets/default_profile_image.png"
+                                                                                    alt=""
+                                                                                    class="img-fluid rounded-circle w-50 mb-3">
+                                                                              <h3>Name</h3>
+                                                                              <h5>Email</h5>
+                                                                              <p>belongs field wil </p>
+                                                                              <div
+                                                                                    class="d-flex flex-row justify-content-center">
+                                                                                    <div class="p4">
+                                                                                          <a href="#">
+                                                                                                <button type="button"
+                                                                                                      class="btn btn-info btn-sm">View
+                                                                                                      More</button>
+                                                                                          </a>
+                                                                                          
+                                                                                    </div>
+                                                                              </div>
+                                                                        </div>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </section>
+                                    </div>   -->
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </ng-template>
+</ng-template>

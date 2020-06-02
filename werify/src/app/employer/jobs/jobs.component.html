@@ -1,0 +1,61 @@
+<div class="card-header">
+      <div class="row container-fluid">
+            <div class="col-sm-4">
+                  <div class="ml-5 pl-4">
+                        <h3>Jobs</h3>
+                  </div>
+            </div>
+            <div class="col-sm-6">
+            </div>
+            <div class="col-sm-2">
+                  <div class="ml-5 pl-4">
+                        <a routerLink='post_job'><button type="button" class="btn btn-info">Post Job
+                              </button></a>
+                  </div>
+            </div>
+      </div>
+</div>
+
+
+<section class="ftco-section bg-light">
+      <div class="container">
+            <div class="row ">
+                  <div *ngFor="let job of jobs" class="col-md-12 ftco-animate pt-3">
+                        <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center ">
+                              <div class="mb-4 mb-md-0 mr-5">
+                                    <div class="job-post-item-header d-flex align-items-center">
+                                          <h2 class="mr-3 text-black h3">{{job.title}}</h2>
+                                          <div class="badge-wrap">
+                                                <span
+                                                      class="bg-danger text-white badge py-2 px-3">{{job.job_type}}</span>
+                                          </div>
+
+
+                                    </div>
+                                    <div class="job-post-item-body d-block d-md-flex">
+                                          <div class="mr-3">{{job.user}}</div>
+                                          <div><span class="icon-my_location"></span>
+                                                <span>{{job.location}}</span>
+                                          </div>
+                                    </div>
+                                    <div class="job-post-item-body d-block d-md-flex">
+                                          <div class="mr-3">{{job.salary+"/- PKR"}}</div>
+                                    </div>
+                              </div>
+                              <div class="ml-auto d-flex">
+                                    <a routerLink="edit_job/{{job._id}}"
+                                          class="btn btn-info btn-sm mr-2 change_color">Edit Job</a>
+                                    <a routerLink="{{job._id}}" class="btn btn-info btn-sm mr-2 change_color">Read
+                                          More</a>
+                                    <a *ngIf="!(job.retract_job); else elseBlock" (click)="RetractJob(job._id)"
+                                          class="btn btn-info btn-sm change_color">Retract</a>
+                                    <ng-template #elseBlock>
+                                          <a (click)="UnRetractJob(job._id)"
+                                                class="btn btn-info btn-sm change_color">ReRetract</a>
+                                    </ng-template>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</section>

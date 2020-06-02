@@ -1,0 +1,8 @@
+
+  #team .card:hover {
+      /* background: #1357e9; */
+      /* color: #fff; */
+      border-radius: 1px;
+      border:none;
+      box-shadow: 2px 2px 2px 7px #007bff;
+  }

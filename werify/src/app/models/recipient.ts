@@ -1,0 +1,26 @@
+export class Recipient {
+      constructor(
+            public first_name: string,
+            public last_name: string,
+            public username: string,
+            public password: string,
+            public email: string,
+            public joining_date: Date,
+            public email_status: Boolean,
+            public phone: String,
+            public phone_status: boolean,
+            public forgot_password_key: string,
+            public country: string,
+            public province: string,
+            public city: string,
+            public distruct: string,
+            public address: string,
+            public img_path: string,
+            public approved: boolean,
+            public profile_completed_status: boolean,
+            public blocked: boolean,
+            public cnic: string,
+            public field: string,
+            public employed: string,
+            public dob: Date) { }
+}

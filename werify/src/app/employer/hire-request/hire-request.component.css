@@ -1,0 +1,22 @@
+.job-post-item {
+      border-radius: 0;
+      box-shadow: 5px 5px 15px #007bff;
+      transition: all 0.3s ease-in;
+      -webkit-transition: all 0.3s ease-in;
+      -moz-transition: all 0.3s ease-in;
+    }
+  
+  .job-post-item:hover {
+      background: #007bff;
+      /* color: #007bff; */
+      border-radius: 2px;
+      border:none;
+      box-shadow: 5px 5px 5px 6px #007bff;
+    }
+    
+    .job-post-item:hover h3 {
+      color: #fff;
+    }
+    .change_color{
+      color: white;
+    }

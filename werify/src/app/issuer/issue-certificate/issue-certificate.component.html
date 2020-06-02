@@ -1,0 +1,24 @@
+<div class="d-md-flex align-items-center h-md-100 p-4 justify-content-center">
+      <form ngNativeValidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <h2>Issue Certificate</h2>
+            <br>
+            <div class="form-group">
+                  <label>Recipient Username</label>
+                  <input type="text" name="course_name" class="form-control" aria-describedby="emailHelp"
+                        [(ngModel)]="certificate.reciever" required placeholder="Enter Username">
+            </div>
+            <div class="form-group">
+                  <label>Recipient CNIC</label>
+                  <input type="number" name="course_name" class="form-control" aria-describedby="emailHelp"
+                        [(ngModel)]="certificate.reciever_cnic" required placeholder="Enter CNIC">
+            </div>
+            <label>Course</label>
+            <select name="duration" required class="form-control" [(ngModel)]="certificate.course">
+                  <option *ngFor="let course of courses" value="{{course.name}}">{{course.name}}</option>
+            </select>
+            <br>
+            <div class=" d-md-flex align-items-center justify-content-center">
+                  <button type="submit" class="btn btn-success">Issue Certificate</button>
+            </div>
+      </form>
+</div>

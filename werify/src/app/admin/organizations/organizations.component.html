@@ -1,0 +1,44 @@
+<div class="container-fluid">
+      <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                  <h2 class="m-0 font-weight-bold text-danger">Users</h2>
+            </div>
+            <div class="card-body">
+                  <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                              <thead>
+                                    <tr>
+                                          <th>Image</th>
+                                          <th>Email</th>
+                                          <th>City</th>
+                                          <th>Phone Number</th>
+                                          <th>Country</th>
+                                    </tr>
+                              </thead>
+                              <tbody>
+                                    <tr *ngFor="let org of orgs">
+                                          <td><img [src]="imageSrc ||'http://localhost:3000/assets/'+org.img_path"
+                                                      height="50" width="50" alt="" class="img-fluid rounded-circle">
+                                          </td>
+                                          <td>{{org.email}}</td>
+                                          <td>{{org.city}}</td>
+                                          <td>{{org.phone}}</td>
+                                          <td>{{org.country}}</td>
+
+                                    </tr>
+                                    <tr *ngFor="let rec of recs">
+                                          <td><img [src]="imageSrc ||'http://localhost:3000/assets/'+rec.img_path"
+                                                      height="50" width="50" alt="" class="img-fluid rounded-circle">
+                                          </td>
+                                          <td>{{rec.email}}</td>
+                                          <td>{{rec.city}}</td>
+                                          <td>{{rec.phone}}</td>
+                                          <td>{{rec.country}}</td>
+                                    </tr>
+                              </tbody>
+                        </table>
+                  </div>
+            </div>
+      </div>
+
+</div>

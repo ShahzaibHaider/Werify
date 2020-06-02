@@ -1,0 +1,41 @@
+<div class="container-fluid">
+      <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                  <h2 class="m-0 font-weight-bold text-danger">Feedbacks</h2>
+            </div>
+            <div class="card-body">
+                  <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                              <thead>
+                                    <tr>
+                                          <th>Provider</th>
+                                          <th>Category</th>
+                                          <th>Description</th>
+                                          <th>User Type</th>
+                                          <th>Status</th>
+                                          <th>Reply</th>
+                                    </tr>
+                              </thead>
+                              <tbody>
+                                    <tr *ngFor="let feedback of feedbacks">
+                                          <td>{{feedback.provider}}</td>
+                                          <td>{{feedback.category}}</td>
+                                          <td>{{feedback.desc}}</td>
+                                          <td>{{feedback.user_type}}</td>
+                                          <td>{{feedback.replied}}</td>
+
+                                          <td *ngIf="!(feedback.replied) else elseBlock"><button
+                                                      (click)="reply(feedback)"
+                                                      class="btn btn-danger btn-sm ml-5">Reply</button> </td>
+
+                                          <ng-template #elseBlock>
+                                                <td><button class="btn btn-success btn-sm ml-5">Replied</button> </td>
+                                          </ng-template>
+                                    </tr>
+                              </tbody>
+                        </table>
+                  </div>
+            </div>
+      </div>
+
+</div>

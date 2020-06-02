@@ -1,0 +1,58 @@
+<div class="job_details_area">
+      <div class="container">
+            <div class="row">
+                  <div class="col-lg-8">
+                        <div class="job_details_header">
+                              <div class="single_jobs white-bg d-flex justify-content-between">
+                                    <div class="jobs_left d-flex align-items-center mb-2 ml-4">
+                                          <div class="thumb">
+                                                <img class="rounded-circle mr-3"
+                                                      [src]="'http://localhost:3000/assets/'+org.img_path" alt=""
+                                                      width="120" height="120">
+                                          </div>
+                                          <div class="jobs_conetent pl-3">
+                                                <a>
+                                                      <h1>{{job.title}}</h1>
+                                                </a>
+                                                <div class="links_locat d-flex align-items-center">
+                                                      <div class="location">
+                                                            <p> <i class="fa fa-map-marker"></i>{{org.address}}
+                                                            </p>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="descript_wrap white-bg">
+                              <div class="single_wrap">
+                                    <h4>Job description</h4>
+                                    <p>{{job.description}}</p>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="col-lg-4">
+                        <div class="job_sumary">
+                              <div class="summery_header">
+                                    <div class="d-md-flex align-items-center justify-content-center">
+                                          <h3>Job Summary</h3>
+                                    </div>
+                              </div>
+                              <div class="job_content">
+                                    <ul>
+                                          <li>Published on: {{job.date}}</li>
+                                          <li>Vacancy: {{job.vacancies}} Position</li>
+                                          <li>Salary: {{job.salary +"/- PKR"}}</li>
+                                          <li>Location: {{job.location}}</li>
+                                          <li>Job Nature: {{job.job_type}}</li>
+                                          <li>Field: {{job.field}}</li>
+                                    </ul>
+                              </div>
+                              <div class="d-md-flex align-items-center pb-5 justify-content-center">
+                                    <button (click)="ApplyOnJob(job._id)" class="btn btn-primary">Apply For Job</button>
+                              </div>
+                        </div>
+
+                  </div>
+            </div>
+      </div>

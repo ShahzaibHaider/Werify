@@ -1,0 +1,198 @@
+<div *ngIf="!(this.org); else elseBlock">
+      <h3>You are Logged Out</h3>
+</div>
+<ng-template #elseBlock>
+      <div>
+            <div class="d-md-flex align-items-center h-md-100 p-3 justify-content-center">
+                  <div> </div>
+                  <img [src]="imageSrc || '../../../assets/default_profile_image.png'"
+                        class="avatar img-circle img-thumbnail" alt="avatar" width="200" height="200"
+                        class="rounded-circle">
+            </div>
+            <div class="d-md-flex align-items-center justify-content-center">
+                  <input type="file" accept=".jpg,.png,.jpeg" name="uploadfile" id="img"
+                        (change)="onFileSelected($event)" style="display:none;" />
+                  <label id="upload_button" for="img">Upload image</label>
+            </div>
+            <div class="container bootstrap snippet">
+                  <form ngNativeValidate (ngSubmit)="onSubmit()">
+                        <div class="row">
+                              <div class="col-sm-4">
+                                    <div class="tab-content">
+                                          <div class="tab-pane active" id="home">
+                                                <div class="form-group">
+                                                      <div class="col-xs-6">
+                                                            <label for="first_name">
+                                                                  <h5>Organization Name</h5>
+                                                            </label>
+                                                            <input type="text" class="form-control" disabled
+                                                                  name="username" [(ngModel)]="org.username"
+                                                                  id="first_name" placeholder="Enter First Name"
+                                                                  title="enter your first name if any.">
+                                                      </div>
+                                                </div>
+                                                <div class="form-group">
+                                                      <div class="col-xs-6">
+                                                            <label for="last_name">
+                                                                  <h5>Email</h5>
+                                                            </label>
+                                                            <div class="input-group input-sm">
+                                                                  <input name="email" disabled [(ngModel)]="org.email"
+                                                                        required type="text" class="form-control">
+                                                                  <!-- <span [hidden]="org.email_status"
+                                                                        class="input-group-btn">
+                                                                        <button (click)="Verify()"
+                                                                              class="btn btn-default"
+                                                                              type="button">Verify</button>
+                                                                  </span> -->
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                                <div class="form-group">
+                                                      <div class="col-xs-6">
+                                                            <label for="phone">
+                                                                  <h5>Organization Creation date</h5>
+                                                            </label>
+                                                            <input name="dob" [(ngModel)]="newDate" type="date" required
+                                                                  class="form-control" id="phone"
+                                                                  placeholder="Enter Organization Creation Date"
+                                                                  title="enter your phone number if any.">
+                                                      </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                      <div class="col-xs-6">
+                                                            <label for="phone">
+                                                                  <h5>City</h5>
+                                                            </label>
+                                                            <input name="city" [(ngModel)]="org.city" type="text"
+                                                                  required class="form-control" id="phone"
+                                                                  placeholder="Enter City"
+                                                                  title="enter your phone number if any.">
+                                                      </div>
+                                                </div>
+                                                <!-- <div class="form-group">
+                                                      <div class="col-xs-6">
+                                                            <label for="phone">
+                                                                  <h5>Password</h5>
+                                                            </label>
+                                                            <input name="password" [(ngModel)]="org.password" required
+                                                                  type="text" class="form-control" id="phone"
+                                                                  placeholder="enter phone"
+                                                                  title="enter your phone number if any.">
+                                                      </div>
+                                                </div> -->
+                                          </div>
+                                    </div>
+                              </div>
+                              <div class="col-sm-4">
+                                    <div class="tab-content">
+                                          <div class="tab-pane active" id="home">
+                                                <div class="form-group">
+                                                      <div class="col-xs-6">
+                                                            <label for="first_name">
+                                                                  <h5>First Name</h5>
+                                                            </label>
+                                                            <input name="first_name" [(ngModel)]="org.first_name"
+                                                                  required type="text" class="form-control"
+                                                                  id="first_name" placeholder="Enter First Name"
+                                                                  title="enter your first name if any.">
+                                                      </div>
+                                                </div>
+                                                <div class="form-group">
+                                                      <div class="col-xs-6">
+                                                            <label for="last_name">
+                                                                  <h5>Phone</h5>
+                                                            </label>
+                                                            <div class="input-group input-sm">
+                                                                  <input name="phone" [(ngModel)]="org.phone" required
+                                                                        type="phone" class="form-control"
+                                                                        placeholder="Enter Phone Number">
+                                                                  <!-- <span class="input-group-btn">
+                                                                        <button class="btn btn-default"
+                                                                              type="button">Verify</button>
+                                                                  </span> -->
+                                                            </div><!-- /input-group -->
+                                                      </div>
+                                                </div>
+                                                <div class="form-group">
+                                                      <div class="col-xs-6">
+                                                            <label for="phone">
+                                                                  <h5>Address</h5>
+                                                            </label>
+                                                            <input name="address" [(ngModel)]="org.address" type="text"
+                                                                  required class="form-control" id="phone"
+                                                                  placeholder="Enter Address"
+                                                                  title="enter your phone number if any.">
+                                                      </div>
+                                                </div>
+                                                <div class="form-group">
+                                                      <div class="col-xs-6">
+                                                            <label for="phone">
+                                                                  <h5>District</h5>
+                                                            </label>
+                                                            <input name="district" [(ngModel)]="org.district" required
+                                                                  type="text" class="form-control" id="phone"
+                                                                  placeholder="Enter District"
+                                                                  title="enter your phone number if any.">
+                                                      </div>
+                                                </div>
+
+                                          </div>
+                                    </div>
+                              </div>
+                              <div class="col-sm-4">
+                                    <div class="tab-content">
+                                          <div class="tab-pane active" id="home">
+                                                <div class="form-group">
+                                                      <div class="col-xs-6">
+                                                            <label for="first_name">
+                                                                  <h5>Last Name</h5>
+                                                            </label>
+                                                            <input name="last_name" [(ngModel)]="org.last_name" required
+                                                                  type="text" class="form-control" id="first_name"
+                                                                  placeholder="Enter Last Name"
+                                                                  title="enter your first name if any.">
+                                                      </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                      <div class="col-xs-6">
+                                                            <label for="phone">
+                                                                  <h5>Country</h5>
+                                                            </label>
+                                                            <input name="country" [(ngModel)]="org.country" type="text"
+                                                                  required class="form-control" id="phone"
+                                                                  placeholder="Enter Country"
+                                                                  title="enter your phone number if any.">
+                                                      </div>
+                                                </div>
+                                                <div class="form-group">
+                                                      <div class="col-xs-6">
+                                                            <label for="phone">
+                                                                  <h5>Province</h5>
+                                                            </label>
+                                                            <input name="province" [(ngModel)]="org.province" required
+                                                                  type="text" class="form-control" id="phone"
+                                                                  placeholder="Enter Province"
+                                                                  title="enter your phone number if any.">
+                                                      </div>
+                                                </div>
+
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="d-md-flex align-items-center h-md-100 p-3 justify-content-center">
+                              <div class="form-group">
+                                    <div class="col-xs-12">
+                                          <button class="btn btn-lg btn-success" type="submit"><i
+                                                      class="glyphicon glyphicon-ok-sign"></i>
+                                                Save Profile</button>
+                                    </div>
+                              </div>
+                        </div>
+                  </form>
+            </div>
+      </div>
+</ng-template>
